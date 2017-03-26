@@ -47,20 +47,20 @@ trait Main {
 
   object ToMonth {
     val months = Map(
-    "Jan" -> Month.JANUARY,
-    "Feb" -> Month.FEBRUARY,
-    "Mrt" -> Month.MARCH,
-    "Apr" -> Month.APRIL,
-    "Mei" -> Month.MAY,
-    "Jun" -> Month.JUNE,
-    "Jul" -> Month.JULY,
-    "Aug" -> Month.AUGUST,
-    "Sep" -> Month.SEPTEMBER,
-    "Okt" -> Month.OCTOBER,
-    "Nov" -> Month.NOVEMBER,
-    "Dec" -> Month.DECEMBER
+    "jan" -> Month.JANUARY,
+    "feb" -> Month.FEBRUARY,
+    "mrt" -> Month.MARCH,
+    "apr" -> Month.APRIL,
+    "mei" -> Month.MAY,
+    "jun" -> Month.JUNE,
+    "jul" -> Month.JULY,
+    "aug" -> Month.AUGUST,
+    "sep" -> Month.SEPTEMBER,
+    "okt" -> Month.OCTOBER,
+    "nov" -> Month.NOVEMBER,
+    "dec" -> Month.DECEMBER
     )
-    def unapply(in: String): Option[Month] = months.get(in)
+    def unapply(in: String): Option[Month] = months.get(in.toLowerCase)
   }
 
   def parseEvent(url: String, doc: Document): Event = {
