@@ -116,6 +116,9 @@ class MainLambda extends Main {
 }
 
 object MainApp extends App with Main {
-  print(fetchCalendar())
-  dispatch.Http.shutdown()
+  try {
+    print(fetchCalendar())
+  } finally {
+    dispatch.Http.shutdown()
+  }
 }
